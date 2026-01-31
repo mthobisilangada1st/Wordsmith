@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Catalog</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo+Black&family=Bebas+Neue&family=El+Messiri:wght@400..700&family=Michroma&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- MOBILE NAV -->
+  <header class="navbar">
+    <div class="logo">WORDSMITH CATALOG</div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <nav id="mobileMenu">
+      <a href="#almost">Almost</a>
+      <a href="#chapter2">N Then Some (Chapter 2)</a>
+      <a href="#avengers">Avengers Freestyle</a>
+      <a href="#offcuts">N Then Some (Off Cuts)</a>
+      <a href="#diamonds">Diamonds</a>
+      <a href="#">Album 6 (TBA)</a>
+      <a href="#">Album 7 (TBA)</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- OPENING STATEMENT -->
+    <section class="statement">
+      I HAVE OUTGROWN THE HUNGER FOR FAME AND RECOGNITION, YET I STILL REMAIN A DEEP LOVER OF THIS ART FORM, IF YOU KNOW WHO I AM KEEP IT TO YOURSELF, BEYOND THAT ENJOY THE MUSIC! STREAM IT WHENEVER CONVENIENT
+    </section>
+
+    <!-- FIRE HEADER -->
+    <h1 class="catalog-title">
+      THE WHOLE CATALOG IS
+      <span id="fire">FIRE</span>
+    </h1>
+
+    <!-- RANDOM PLAYLIST -->
+    <section class="player">
+  <h2>Random Playlist</h2>
+
+  <audio id="playlist" controls></audio>
+
+  <div class="player-controls">
+    <button id="prev">⏮ Prev</button>
+    <button id="next">Next ⏭</button>
+  </div>
+
+  <p id="nowPlaying">Now Playing: —</p>
+</section>
+
+
+    <!-- ALBUM CARDS -->
+    <section class="albums">
+
+      <!-- 1. Almost (Latest) -->
+      <a href="almost.html" class="album-card" id="almost">
+        <img src="ALMOST.jpg" alt="Almost Cover">
+        <h3>Almost</h3>
+        <p>Wordsmith</p>
+        <span>2024-10-11</span>
+      </a>
+
+      <!-- 2. N Then Some (Chapter 2) -->
+      <a href="chapter2.html" class="album-card" id="chapter2">
+        <img src="N THEN SOME CHAPTER 2.jpg" alt="Chapter 2 Cover">
+        <h3>N Then Some (Chapter 2)</h3>
+        <p>Wordsmith</p>
+        <span>2024-02-09</span>
+      </a>
+
+      <!-- 2. N Then Some (Chapter 1) -->
+      <a href="chapter1.html" class="album-card" id="diamonds">
+        <img src="N THEN SOME (CHAPTER1).jpg" alt="Diamonds Cover">
+        <h3>N THEN SOME (CHAPTER 1)</h3>
+        <p>Wordsmith</p>
+        <span>2024-01-29</span>
+      </a>
+
+      <!-- 3. Avengers Freestyle -->
+      <a href="avengers.html" class="album-card" id="avengers">
+        <img src="AVENGERS FREESTYLE.jpg" alt="Avengers Cover">
+        <h3>Avengers Freestyle</h3>
+        <p>Wordsmith</p>
+        <span>2024-01-26</span>
+      </a>
+
+      <!-- 4. N Then Some (Off Cuts) -->
+      <a href="offcuts.html" class="album-card" id="offcuts">
+        <img src="N THEN SOME (OFF CUTS).jpg" alt="Off Cuts Cover">
+        <h3>N Then Some (Off Cuts)</h3>
+        <p>Wordsmith</p>
+        <span>2023-12-01</span>
+      </a>
+
+      <!-- 5. Diamonds -->
+      <a href="diamonds.html" class="album-card" id="diamonds">
+        <img src="Diamonds.jpg" alt="Diamonds Cover">
+        <h3>Diamonds</h3>
+        <p>R.JAY & Mtho Dawordsmith</p>
+        <span>2021-01-29</span>
+      </a>
+
+      <!-- 6 & 7 Placeholder Albums -->
+      <div class="album-card placeholder">Album 6 (TBA)</div>
+      <div class="album-card placeholder">Album 7 (TBA)</div>
+
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

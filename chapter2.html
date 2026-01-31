@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>N THEN SOME C2</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Archivo+Black&family=Bebas+Neue&family=El+Messiri:wght@400..700&family=Michroma&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.png" type="image/x-icon">
+</head>
+
+ <style>
+    :root {
+      --primary: #ffffff;
+      --secondary: #c2c2c2;
+      --accent: #0a7cff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: var(--primary);
+    }
+
+     /* ===== NAVIGATION BAR ===== */
+nav {
+  background: #0f0f0f;
+  padding: 14px 18px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #c2c2c2;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #ffffff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+    .album-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: clamp(0.95rem, 2.8vw, 1.05rem);
+      line-height: 1.6;
+      color: var(--secondary);
+      margin-bottom: 24px;
+    }
+
+    audio {
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    .track-title {
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      flex: 1;
+      min-width: 120px;
+      padding: 14px 16px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.1s ease, background 0.2s ease;
+    }
+
+    button:active {
+      transform: scale(0.97);
+    }
+
+    button:hover {
+      background: #055ec2;
+    }
+
+    /* Small devices */
+    @media (max-width: 480px) {
+      .controls {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+  <div class="nav-container">
+    <div class="logo">WORDSMITH'S DISCOGRAPHY</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">HOME</a>
+      <a href="almost.html" class="active">ALMOST</a>
+      <a href="chapter2.html">CHAPTER2</a>
+      <a href="Chapter1.html">CHAPTER 1</a>
+      <a href="avengers.html">AVENGERS </a>
+      <a href="offcuts.html">OFF-CUTS</a>
+      <a href="diamonds.html">DIAMONDZ</a>
+    </div>
+  </div>
+</nav>
+
+  <main class="album-container">
+
+    <!-- Album Title -->
+    <h1>N THEN SOME (CHAPTER 2)</h1>
+
+    <!-- Album Description -->
+    <p>
+      WHEN THESE WHERE RECORDED, IT WAS A CHILLED SESSION AT RES, PROBABLY HIGH ON FINE GRADES (DON'T GET HIGH KIDS!)
+    </p>
+
+    <!-- Audio Player -->
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="tracks/track1.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- Track Title -->
+    <div class="track-title" id="trackTitle">
+      Track 1 –00:00
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="prevTrack()">⏮ Previous</button>
+      <button onclick="nextTrack()">Next ⏭</button>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+   <script>
+  function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("show");
+  }
+</script>
+
+  <script>
+    const tracks = [
+      { title: "00:00", file: "05 Twelve AM.mp3" },
+      { title: "Kush!", file: "08. Kush!.mp3" },
+      { title: "REFLECTIONS", file: "09. REFLECTIONS.mp3" },
+    ];
+
+    let currentTrack = 0;
+
+    const audioPlayer = document.getElementById("audioPlayer");
+    const audioSource = document.getElementById("audioSource");
+    const trackTitle = document.getElementById("trackTitle");
+
+    function loadTrack(index) {
+      audioSource.src = tracks[index].file;
+      trackTitle.textContent = tracks[index].title;
+      audioPlayer.load();
+      audioPlayer.play();
+    }
+
+    function nextTrack() {
+      currentTrack = (currentTrack + 1) % tracks.length;
+      loadTrack(currentTrack);
+    }
+
+    function prevTrack() {
+      currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+      loadTrack(currentTrack);
+    }
+
+    // Optional: auto-play next track
+    audioPlayer.addEventListener("ended", nextTrack);
+  </script>
+
+</body>
+</html>
